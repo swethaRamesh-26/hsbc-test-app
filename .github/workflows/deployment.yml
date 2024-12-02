@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: go-app
-        image: gcr.io/my-project-id/go-app:v1.0
+        image: gcr.io/my-project-24-442809/go-app:v1.0
         ports:
         - containerPort: 8080
 ---
