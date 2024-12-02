@@ -1,11 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+<<<<<<< HEAD
   name: web-app
+=======
+  name: go-app
+>>>>>>> 943f2649d31b7ee4830d35937dea208ff2d8415a
 spec:
   replicas: 2
   selector:
     matchLabels:
+<<<<<<< HEAD
       app: web-app
   template:
     metadata:
@@ -15,17 +20,36 @@ spec:
       containers:
       - name: web-app
         image: <your-docker-image-uri>
+=======
+      app: go-app
+  template:
+    metadata:
+      labels:
+        app: go-app
+    spec:
+      containers:
+      - name: go-app
+        image: <IMAGE_URI>
+>>>>>>> 943f2649d31b7ee4830d35937dea208ff2d8415a
         ports:
         - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
+<<<<<<< HEAD
   name: web-app-service
 spec:
   type: LoadBalancer
   selector:
     app: web-app
+=======
+  name: go-app-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: go-app
+>>>>>>> 943f2649d31b7ee4830d35937dea208ff2d8415a
   ports:
   - protocol: TCP
     port: 80
